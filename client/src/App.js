@@ -1,25 +1,23 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./component/Navbar";
+import Navbar from "./component/navbar/Navbar";
 import Home from "./component/Home";
-import Record from "./component/Record";
 import Notfound from "./component/Notfound";
-import Menu from "./component/Menu";
-import Search from "./component/Search";
-import Chart from "./component/Chart";
+import Good from "./component/good/Good";
+import Login from "./component/Login";
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/chart" element={<Chart />} />
-        <Route path="/record" element={<Record />} />
-        <Route path="/menu" element={<Menu />} />
-        <Route path="/*" element={<Notfound />} />
-      </Routes>
-    </Router>
+    <div>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/good" element={<Good />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/*" element={<Notfound />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 export default App;
