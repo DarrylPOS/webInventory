@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./component/navbar/Navbar";
-import Home from "./component/Home";
 import Notfound from "./component/Notfound";
 import Good from "./component/good/Good";
 import Login from "./component/Login";
+import Dashboard from './component/dashboard/Dashboard'
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Dashboard />} />
           <Route path="/good" element={<Good />} />
           <Route path="/login" element={<Login />} />
           <Route path="/*" element={<Notfound />} />
