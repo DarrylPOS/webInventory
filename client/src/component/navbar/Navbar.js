@@ -3,9 +3,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MdSpaceDashboard } from 'react-icons/md'   
-import { BsFillGridFill} from 'react-icons/bs'
+import { BsFillGridFill,BsFillShieldLockFill} from 'react-icons/bs'
 import { SiGriddotai, SiGridsome } from 'react-icons/si'
-import { FaUserTag } from 'react-icons/fa'
+import { FaUserTag,FaUserCircle, FaUser } from 'react-icons/fa'
 import { HiDocumentReport } from 'react-icons/hi'
 
 import { useLocation } from "react-router-dom";
@@ -13,8 +13,8 @@ import { useLocation } from "react-router-dom";
 const Navbar = () => {
   
   return (
-    <div className="grid grid-cols-1 place-content-start gap-4 w-44 h-screen bg-zinc-800 p-5 inline ">
-   <h4 className="text-lg text-white text-lg font-bold mt-4 ">Gasoline POS</h4>
+    <div className="grid grid-cols-1 place-content-start gap-4 w-44 h-screen bg-zinc-800 p-5 fixed  left-0 z-40 ">
+   <h4 className="text-lg text-white text-xl font-bold mt-4 mb-3 ">Gasoline POS</h4>
     {/* content navbar */}
       <Content icon={<MdSpaceDashboard />} name={"Dashboard"} link={"/"} />
       <Content icon={<BsFillGridFill/>} name={"Goods"} link={"/goods"} />
@@ -24,6 +24,9 @@ const Navbar = () => {
         <Content icon={<FaUserTag/>} name={"Suppliers"} link={"/supplier"} />
       </span>
       <Content icon={<HiDocumentReport />} name={"Report"} link={"/reports"} />
+        <Content icon={<FaUser/>} name={"Manage User"} link={"/user"} />
+        <Content icon={<FaUserCircle/>} name={"Profile"} link={"/profile"} />
+        <Content icon={<BsFillShieldLockFill/>} name={"Password"} link={"/password"} />
     </div>
   );
 };
@@ -43,7 +46,7 @@ export const Content = ({ link, icon, name }) => {
     <span className="mt-[.2rem]">
       {icon}
     </span>
-      <h4 className="drop-shadow-md font-semibold capitalize">{name}</h4>
+      <h4 className="drop-shadow-sm font-semibold capitalize">{name}</h4>
     </Link>
   );
 };
